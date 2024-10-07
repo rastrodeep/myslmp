@@ -1,8 +1,41 @@
+/* עיצוב כללי של הדף */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* עיצוב רקע הדף */
+.background-image {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* שכבת כיסוי שקופה */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* אפקט שקיפות */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
 /* עיצוב הכותרת */
 h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    color: #ff6347; /* צבע כתום-אדום עבור הכותרת */
+    color: #ff6347; /* צבע כתום-אדום לכותרת */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -11,30 +44,30 @@ h1 {
     padding: 0;
 }
 
-/* צבע כחול לכל הקישורים הרגילים */
+/* צבע כחול רגיל עבור כל הקישורים הרגילים */
 .social-links a {
     text-decoration: none;
     font-size: 24px;
-    color: #007bff; /* צבע כחול לקישורים */
+    color: #007bff; /* כחול רגיל */
 }
 
-/* צבע כחול בהיר יותר לקישורים של SoundCloud */
+/* צבע כחול בהיר יותר עבור קישורי SoundCloud */
 .soundcloud-link {
     color: #66ccff; /* צבע כחול בהיר יותר */
 }
 
-/* אפקט מעבר על הקישורים (hover) */
+/* אפקט מעבר (hover) עבור כל הקישורים */
 .social-links a:hover {
     text-decoration: underline;
 }
 
-/* עיצוב קישור האימייל בצבע כתום-אדום מודגש */
+/* עיצוב קישור האימייל בצבע כתום-אדום ולא מודגש */
 .email-link {
     color: #ff6347;
-    font-weight: none; /*  bold = מודגש */
+    font-weight: noen; /* להדגשה הוסף = bold */
 }
 
-/* אפקט מעבר על קישור האימייל */
+/* אפקט מעבר עבור קישור האימייל */
 .email-link:hover {
     text-decoration: underline;
 }
