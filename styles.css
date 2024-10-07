@@ -8,7 +8,7 @@ body, html {
 .background-image {
     position: relative;
     height: 100vh;
-    background-image: url('/Users/liorbrilon/Downloads/background1.png');
+    background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.png');
     background-size: cover;
     background-position: center;
 }
@@ -19,7 +19,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* אפקט חצי שקוף מעל התמונה */
+    background-color: rgba(0, 0, 0, 0.6); /* שקיפות */
     display: flex;
     justify-content: center;
     align-items: center;
