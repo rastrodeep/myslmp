@@ -10,7 +10,7 @@ body, html {
 .background-image {
     position: relative;
     height: 100vh;
-    background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.png');
+    background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
     background-size: cover;
     background-position: center;
 }
