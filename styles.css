@@ -31,7 +31,7 @@ h1 {
 /* עיצוב קישור האימייל בצבע כתום-אדום מודגש */
 .email-link {
     color: #ff6347;
-    font-weight: none; /*  bold = מודגש */
+    font-weight: bold; /*  bold = מודגש */
 }
 
 /* אפקט מעבר על קישור האימייל */
