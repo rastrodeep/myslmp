@@ -13,6 +13,14 @@ body, html {
     background-position: center;
 }
 
+.email-link {
+    color: #ff6347; /* כתום-אדום בהיר */
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
 .overlay {
     position: absolute;
     top: 0;
