@@ -1,3 +1,4 @@
+/* עיצוב כללי עבור הדף */
 body, html {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+/* עיצוב הרקע */
 .background-image {
     position: relative;
     height: 100vh;
@@ -13,14 +15,7 @@ body, html {
     background-position: center;
 }
 
-.email-link {
-    color: #ff6347; /* כתום-אדום בהיר */
-}
-
-.email-link:hover {
-    text-decoration: underline;
-}
-
+/* שכבת כיסוי שקופה */
 .overlay {
     position: absolute;
     top: 0;
@@ -36,26 +31,38 @@ body, html {
     text-align: center;
 }
 
+/* עיצוב הכותרת */
 h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    color: #ff6347; /* צבע כתום-אדום עבור הכותרת */
 }
 
+/* עיצוב רשימת הקישורים */
 .social-links {
     list-style: none;
     padding: 0;
 }
 
-.social-links li {
-    margin: 10px 0;
-}
-
+/* צבע כחול לכל הקישורים */
 .social-links a {
     text-decoration: none;
     font-size: 24px;
-    color: #fff;
+    color: #007bff; /* צבע כחול לקישורים */
 }
 
+/* אפקט מעבר על הקישורים (hover) */
 .social-links a:hover {
+    text-decoration: underline;
+}
+
+/* עיצוב קישור האימייל בצבע כתום-אדום מודגש */
+.email-link {
+    color: #ff6347;
+    font-weight: bold; /* מודגש */
+}
+
+/* אפקט מעבר על קישור האימייל */
+.email-link:hover {
     text-decoration: underline;
 }
