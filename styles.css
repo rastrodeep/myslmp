@@ -36,9 +36,18 @@ body, html {
     text-align: center;
     padding: 10px;
     min-height: 100vh; /* גובה מינימלי למסך מלא */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards; /* אפקט Fade-In */
 }
 
-/* עיצוב לתמונת הפרופיל */
+/* אפקט Fade-In */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* עיצוב לתמונת הפרופיל עם אפקט Zoom-In */
 .profile-image {
     width: 25vw; /* גודל דינמי לפי רוחב המסך */
     height: 25vw; /* גודל דינמי לפי רוחב המסך */
@@ -48,6 +57,15 @@ body, html {
     object-fit: cover; /* מתאים את התמונה לגבולות */
     margin-bottom: 2vh; /* הקטנת המרווח בין התמונה לכותרת */
     border: 2px solid #fff; /* מסגרת לבנה סביב התמונה */
+    transform: scale(0);
+    animation: zoomIn 1s ease-out forwards; /* אפקט Zoom-In */
+}
+
+/* אפקט Zoom-In */
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+    }
 }
 
 /* עיצוב הכותרת הראשית Welcome */
@@ -56,6 +74,17 @@ h1 {
     margin-bottom: 2vh; /* מרווח דינמי קטן יותר מתחת לכותרת */
     color: #ff6347; /* צבע כתום-אדום לכותרת */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* אפקט צל */
+    opacity: 0;
+    transform: translateY(-50px); /* אפקט Slide-In */
+    animation: slideIn 1s ease-out forwards 0.5s; /* עיכוב של 0.5 שניות */
+}
+
+/* אפקט Slide-In */
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* עיצוב הטקסט המזמין מתחת לכותרת */
@@ -63,6 +92,9 @@ h1 {
     font-size: 3.5vw; /* גודל טקסט דינמי לפי רוחב המסך */
     color: #ffffff; /* צבע לבן */
     margin-bottom: 3vh; /* מרווח דינמי */
+    opacity: 0;
+    transform: translateY(50px); /* אפקט Slide-In */
+    animation: slideIn 1s ease-out forwards 0.7s; /* עיכוב של 0.7 שניות */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -85,6 +117,17 @@ h1 {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.2s;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 1.2s; /* אפקט Slide-In */
+}
+
+/* אפקט Slide-In עבור כל הקישורים */
+@keyframes slideInLinks {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 /* עיצוב מיוחד לקופסה של Lucid בצבע אדום */
@@ -101,6 +144,7 @@ h1 {
     font-size: 4vw; /* גודל דינמי לקישורים */
     font-weight: bold;
     transition: color 0.2s;
+    position: relative;
 }
 
 /* אפקט Hover לקישורים */
@@ -148,6 +192,8 @@ h1 {
     transform: translateX(-50%); /* העברת האובייקט למרכז */
     text-align: center;
     font-style: italic;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards 1.5s; /* אפקט Fade-In */
 }
 
 /* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
