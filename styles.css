@@ -1,89 +1,37 @@
-/* עיצוב כללי */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-/* עיצוב רקע */
-.background-image {
-    position: relative;
-    height: 100vh;
-    background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.png');
-    background-size: cover;
-    background-position: center;
-}
-
-/* שכבת כיסוי שקופה */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* שקיפות */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    text-align: center;
-}
-
-/* עיצוב הכותרת הראשית Welcome */
-h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    color: #ff6347; /* צבע כתום-אדום לכותרת */
-}
-
-/* עיצוב הטקסט המזמין מתחת לכותרת */
-.intro-text {
-    font-size: 20px;
-    color: #ffffff; /* צבע לבן */
-    margin-bottom: 30px;
-}
-
-/* עיצוב רשימת הקישורים */
+/* עיצוב עבור רשימת הקישורים */
 .social-links {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* עיצוב עבור כל קישור כקופסה */
+.social-links li {
+    width: 80%;
+    margin-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.5); /* אפור חצי שקוף */
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.social-links li:hover {
+    transform: scale(1.05); /* אפקט הקפצה בזמן ריחוף */
 }
 
 .social-links a {
+    display: block;
+    padding: 15px;
+    color: #fff;
     text-decoration: none;
-    font-size: 24px;
-    color: #007bff; /* צבע כחול לקישורים הרגילים */
-}
-
-/* צבע כחול בהיר יותר לקישורים של SoundCloud */
-.soundcloud-link {
-    color: #66ccff; /* צבע כחול בהיר יותר */
-}
-
-/* אפקט מעבר (hover) */
-.social-links a:hover {
-    text-decoration: underline;
-}
-
-/* עיצוב קישור האימייל בצבע כתום-אדום ומודגש */
-.email-link {
-    color: #ff6347;
-    font-weight: bold;
-}
-
-.email-link:hover {
-    text-decoration: underline;
-}
-
-/* עיצוב שם בתחתית העמוד */
-.footer-text {
     font-size: 18px;
-    color: white; /* צבע לבן */
-    position: center;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-style: italic;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #ff6347; /* שינוי צבע בזמן ריחוף */
 }
