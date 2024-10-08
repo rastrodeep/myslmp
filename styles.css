@@ -9,16 +9,92 @@ body, html {
     overflow: hidden; /* מניעת גלילה */
 }
 
-/* עיצוב רקע הדף */
+/* עיצוב רקע הדף עם אפקט Parallax */
 .background-image {
     position: relative;
-    height: 100vh; /* הגדרת גובה מלא של הדף */
-    width: 100vw;  /* רוחב מלא של הדף */
+    height: 100vh; /* הגדרת גובה לפי המסך */
+    width: 100vw;  /* רוחב מלא */
     background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* אפקט Parallax */
     background-repeat: no-repeat;
+}
+
+/* שכבת כיסוי שקופה */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* אפקט שקיפות */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    min-height: 100vh; /* גובה מינימלי למסך מלא */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards; /* אפקט Fade-In */
+}
+
+/* אפקט Fade-In */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* עיצוב לתמונת הפרופיל עם אפקט Zoom-In */
+.profile-image {
+    width: 25vw; /* גודל דינמי לפי רוחב המסך */
+    height: 25vw; /* גודל דינמי לפי רוחב המסך */
+    max-width: 180px; /* גודל מקסימלי */
+    max-height: 180px; /* גובה מקסימלי */
+    border-radius: 50%; /* הופך את התמונה לעיגול */
+    object-fit: cover; /* מתאים את התמונה לגבולות */
+    margin-bottom: 2vh; /* הקטנת המרווח בין התמונה לכותרת */
+    border: 2px solid #fff; /* מסגרת לבנה סביב התמונה */
+    transform: scale(0);
+    animation: zoomIn 1s ease-out forwards; /* אפקט Zoom-In */
+}
+
+/* אפקט Zoom-In */
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+/* עיצוב הכותרת הראשית Welcome */
+h1 {
+    font-size: 6vw; /* גודל כותרת דינמי לפי רוחב המסך */
+    margin-bottom: 2vh; /* מרווח דינמי קטן יותר מתחת לכותרת */
+    color: #ff6347; /* צבע כתום-אדום לכותרת */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* אפקט צל */
+    opacity: 0;
+    transform: translateY(-50px); /* אפקט Slide-In */
+    animation: slideIn 1s ease-out forwards 0.5s; /* עיכוב של 0.5 שניות */
+}
+
+/* אפקט Slide-In */
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* עיצוב הטקסט המזמין מתחת לכותרת */
+.intro-text {
+    font-size: 3.5vw; /* גודל טקסט דינמי לפי רוחב המסך */
+    color: #ffffff; /* צבע לבן */
+    margin-bottom: 3vh; /* מרווח דינמי */
+    opacity: 0;
+    transform: translateY(50px); /* אפקט Slide-In */
+    animation: slideIn 1s ease-out forwards 0.7s; /* עיכוב של 0.7 שניות */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -32,51 +108,57 @@ body, html {
     width: 100%;
 }
 
-/* עיצוב כללי לקישורים */
+/* עיצוב כללי לקישורים - רקע אפור חצי שקוף */
 .social-links li {
-    width: 80vw; /* רוחב קופסה דינמי */
-    max-width: 300px; /* רוחב מקסימלי */
+    width: 80vw; /* רוחב הקופסאות דינמי לפי רוחב המסך */
+    max-width: 300px; /* הגבלה על רוחב הקישורים */
     margin-bottom: 2vh;
-    background-color: rgba(255, 255, 255, 0.1); /* רקע אפור שקוף */
-    border-radius: 10px; /* פינות מעוגלות */
+    background-color: rgba(255, 255, 255, 0.1); /* צבע רקע אפור חצי שקוף */
+    border-radius: 10px;
     text-align: center;
     transition: transform 0.2s;
-    opacity: 0;
-    transform: translateX(-100%);
 }
 
-/* אפקט Slide-In לכל קישור עם עיכוב */
+/* אפקט Slide-In עבור כל קישור עם עיכוב */
 .social-links li:nth-child(1) {
-    animation: slideInLinks 1s ease-out forwards 0.5s; /* עיכוב של 0.5 שניות */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 1s; /* עיכוב של 1 שניות */
 }
 
 .social-links li:nth-child(2) {
-    animation: slideInLinks 1s ease-out forwards 0.7s; /* עיכוב של 0.7 שניות */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 1.2s; /* עיכוב של 1.2 שניות */
 }
 
 .social-links li:nth-child(3) {
-    animation: slideInLinks 1s ease-out forwards 0.9s; /* עיכוב של 0.9 שניות */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 1.4s; /* עיכוב של 1.4 שניות */
 }
 
 .social-links li:nth-child(4) {
-    animation: slideInLinks 1s ease-out forwards 1.1s; /* עיכוב של 1.1 שניות */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 1.6s; /* עיכוב של 1.6 שניות */
 }
 
 .social-links li:nth-child(5) {
-    animation: slideInLinks 1s ease-out forwards 1.3s; /* עיכוב של 1.3 שניות */
-}
-
-.social-links li:nth-child(6) {
-    animation: slideInLinks 1s ease-out forwards 1.5s; /* עיכוב של 1.5 שניות */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 1.8s; /* עיכוב של 1.8 שניות */
 }
 
 /* אפקט Slide-In עבור Lucid */
 .social-links li.lucid {
-    animation: slideInLinks 1s ease-out forwards 1.7s; /* עיכוב של 1.7 שניות */
-    background-color: rgba(179, 63, 98, 0.7); /* צבע רקע אדום חושני */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 2s; /* עיכוב של 2 שניות */
+    background-color: rgba(179, 63, 98, 0.7); /* אדום כהה חושני עם נגיעות ורוד כהה */
 }
 
-/* אנימציה Slide-In */
+/* אפקט Slide-In */
 @keyframes slideInLinks {
     to {
         transform: translateX(0);
@@ -88,20 +170,19 @@ body, html {
 .social-links li a {
     display: block;
     padding: 10px;
-    color: #fff; /* צבע לבן */
+    color: #fff;
     text-decoration: none;
-    font-size: 4vw; /* גודל דינמי של טקסט */
+    font-size: 4vw; /* גודל דינמי לקישורים */
     font-weight: bold;
-    transition: color 0.2s; /* אפקט מעבר על צבע הקישור */
+    transition: color 0.2s;
     position: relative;
 }
 
 /* אפקט Hover לקישורים */
 .social-links li a:hover {
-    color: #ff6347; /* שינוי צבע בעת ריחוף */
+    color: #ff6347;
 }
 
-/* אפקט קו תחתון דינמי בעת ריחוף */
 .social-links li a::after {
     content: '';
     position: absolute;
@@ -124,11 +205,11 @@ body, html {
 .email-link {
     color: #ff6347;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none; /* הסרת קו תחתון */
 }
 
 .email-link:hover {
-    color: #ff6347; /* שינוי צבע בעת ריחוף */
+    color: #ff6347; /* השארת צבע אך ללא קו תחתון */
     text-decoration: none; /* מניעת הופעת קו תחתון */
 }
 
@@ -138,12 +219,12 @@ body, html {
     color: white; /* צבע לבן */
     position: absolute;
     bottom: 2vh; /* מרחק מהתחתית */
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; /* מיקום באמצע לרוחב העמוד */
+    transform: translateX(-50%); /* העברת האובייקט למרכז */
     text-align: center;
     font-style: italic;
     opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards 1.5s;
+    animation: fadeIn 1.5s ease-in forwards 1.5s; /* אפקט Fade-In */
 }
 
 /* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
