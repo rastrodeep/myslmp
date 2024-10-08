@@ -7,18 +7,29 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: black; /* צבע שחור כשכבה תחתונה כדי למנוע לבן ברקע */
     overflow: hidden; /* מניעת גלילה */
+    transition: background 0.3s ease; /* מעבר חלק */
 }
 
-/* עיצוב רקע הדף עם אפקט Parallax */
+/* אפקט גרדיאנט משתנה רקע */
 .background-image {
     position: relative;
     height: 100vh; /* הגדרת גובה לפי המסך */
     width: 100vw;  /* רוחב מלא */
-    background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* אפקט Parallax */
-    background-repeat: no-repeat;
+    background: linear-gradient(45deg, #ff6347, #1e90ff, #32cd32);
+    background-size: 600% 600%;
+    animation: gradientShift 15s ease infinite; /* אפקט שינוי צבע רקע */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* שכבת כיסוי שקופה */
@@ -47,7 +58,7 @@ body, html {
     }
 }
 
-/* עיצוב לתמונת הפרופיל עם אפקט Zoom-In */
+/* אפקט Hover מתקדם לתמונת הפרופיל */
 .profile-image {
     width: 25vw; /* גודל דינמי לפי רוחב המסך */
     height: 25vw; /* גודל דינמי לפי רוחב המסך */
@@ -57,33 +68,32 @@ body, html {
     object-fit: cover; /* מתאים את התמונה לגבולות */
     margin-bottom: 2vh; /* הקטנת המרווח בין התמונה לכותרת */
     border: 2px solid #fff; /* מסגרת לבנה סביב התמונה */
-    transform: scale(0);
-    animation: zoomIn 1s ease-out forwards; /* אפקט Zoom-In */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* מעבר חלק */
 }
 
-/* אפקט Zoom-In */
-@keyframes zoomIn {
-    to {
-        transform: scale(1);
-    }
+.profile-image:hover {
+    transform: scale(1.1) rotate(5deg); /* סיבוב קל עם הגדלה */
+    box-shadow: 0px 0px 15px rgba(255, 99, 71, 0.8); /* צל זוהר */
 }
 
-/* עיצוב הכותרת הראשית Welcome */
+/* אפקט Pulsing לכותרת */
 h1 {
     font-size: 6vw; /* גודל כותרת דינמי לפי רוחב המסך */
     margin-bottom: 2vh; /* מרווח דינמי קטן יותר מתחת לכותרת */
     color: #ff6347; /* צבע כתום-אדום לכותרת */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* אפקט צל */
-    opacity: 0;
-    transform: translateY(-50px); /* אפקט Slide-In */
-    animation: slideIn 1s ease-out forwards 0.5s; /* עיכוב של 0.5 שניות */
+    animation: pulse 2s infinite; /* אפקט Pulsing מתמשך */
 }
 
-/* אפקט Slide-In */
-@keyframes slideIn {
-    to {
-        transform: translateY(0);
-        opacity: 1;
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* הגדלה קלה באמצע האנימציה */
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -108,7 +118,7 @@ h1 {
     width: 100%;
 }
 
-/* עיצוב כל קישור בתוך קופסה בצבע אפור בהיר חצי שקוף */
+/* אפקט Slide-In ופייד מתוזמן לכל קישור שאינו SoundCloud */
 .social-links li {
     width: 80vw; /* רוחב הקופסאות דינמי לפי רוחב המסך */
     max-width: 300px; /* הגבלה על רוחב הקישורים */
@@ -119,40 +129,31 @@ h1 {
     transition: transform 0.2s;
 }
 
-/* אפקט Slide-In עבור כל קישור עם עיכוב */
-.social-links li:nth-child(1) {
+.social-links li:not(.soundcloud-link) {
     opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1s; /* עיכוב של 1 שניות */
+    animation: fadeInLinks 1.5s ease forwards;
+}
+
+.social-links li:nth-child(1) {
+    animation-delay: 1.2s; /* עיכוב לקישור הראשון */
 }
 
 .social-links li:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.2s; /* עיכוב של 1.2 שניות */
+    animation-delay: 1.4s; /* עיכוב לקישור השני */
 }
 
 .social-links li:nth-child(3) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.4s; /* עיכוב של 1.4 שניות */
+    animation-delay: 1.6s; /* עיכוב לקישור השלישי */
 }
 
-.social-links li:nth-child(4) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.6s; /* עיכוב של 1.6 שניות */
-}
-
-/* אפקט Slide-In */
-@keyframes slideInLinks {
+@keyframes fadeInLinks {
     to {
-        transform: translateX(0);
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* עיצוב כל קישור */
+/* אפקט Hover מגניב לקישורים */
 .social-links a {
     display: block;
     padding: 10px;
@@ -164,7 +165,6 @@ h1 {
     position: relative;
 }
 
-/* אפקט Hover מגניב לקישורים */
 .social-links a:hover {
     color: #ff6347;
 }
