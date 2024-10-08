@@ -150,10 +150,12 @@ h1 {
     animation: slideInLinks 1s ease-out forwards 1.8s; /* עיכוב של 1.8 שניות */
 }
 
-.social-links li:nth-child(6) {
+/* אפקט Slide-In עבור Lucid */
+.social-links li.lucid {
     opacity: 0;
     transform: translateX(-100%);
     animation: slideInLinks 1s ease-out forwards 2s; /* עיכוב של 2 שניות */
+    background-color: rgba(179, 63, 98, 0.7); /* אדום כהה חושני עם נגיעות ורוד כהה */
 }
 
 /* אפקט Slide-In */
@@ -162,11 +164,6 @@ h1 {
         transform: translateX(0);
         opacity: 1;
     }
-}
-
-/* עיצוב מיוחד לקופסה של Lucid בצבע אדום חושני */
-.social-links li.lucid {
-    background-color: rgba(179, 63, 98, 0.7); /* אדום כהה חושני עם נגיעות ורוד כהה */
 }
 
 /* עיצוב לקישורים */
