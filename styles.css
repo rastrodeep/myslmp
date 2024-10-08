@@ -36,18 +36,9 @@ body, html {
     text-align: center;
     padding: 10px;
     min-height: 100vh; /* גובה מינימלי למסך מלא */
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards; /* אפקט Fade-In */
 }
 
-/* אפקט Fade-In */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-/* עיצוב לתמונת הפרופיל עם אפקט Zoom-In */
+/* עיצוב לתמונת הפרופיל */
 .profile-image {
     width: 25vw; /* גודל דינמי לפי רוחב המסך */
     height: 25vw; /* גודל דינמי לפי רוחב המסך */
@@ -57,15 +48,6 @@ body, html {
     object-fit: cover; /* מתאים את התמונה לגבולות */
     margin-bottom: 2vh; /* הקטנת המרווח בין התמונה לכותרת */
     border: 2px solid #fff; /* מסגרת לבנה סביב התמונה */
-    transform: scale(0);
-    animation: zoomIn 1s ease-out forwards; /* אפקט Zoom-In */
-}
-
-/* אפקט Zoom-In */
-@keyframes zoomIn {
-    to {
-        transform: scale(1);
-    }
 }
 
 /* עיצוב הכותרת הראשית Welcome */
@@ -74,17 +56,6 @@ h1 {
     margin-bottom: 2vh; /* מרווח דינמי קטן יותר מתחת לכותרת */
     color: #ff6347; /* צבע כתום-אדום לכותרת */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* אפקט צל */
-    opacity: 0;
-    transform: translateY(-50px); /* אפקט Slide-In */
-    animation: slideIn 1s ease-out forwards 0.5s; /* עיכוב של 0.5 שניות */
-}
-
-/* אפקט Slide-In */
-@keyframes slideIn {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 /* עיצוב הטקסט המזמין מתחת לכותרת */
@@ -92,9 +63,6 @@ h1 {
     font-size: 3.5vw; /* גודל טקסט דינמי לפי רוחב המסך */
     color: #ffffff; /* צבע לבן */
     margin-bottom: 3vh; /* מרווח דינמי */
-    opacity: 0;
-    transform: translateY(50px); /* אפקט Slide-In */
-    animation: slideIn 1s ease-out forwards 0.7s; /* עיכוב של 0.7 שניות */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -108,64 +76,24 @@ h1 {
     width: 100%;
 }
 
-/* עיצוב כל קישור בתוך קופסה בצבע אפור בהיר חצי שקוף */
+/* עיצוב כללי לקישורים - רקע אפור חצי שקוף */
 .social-links li {
     width: 80vw; /* רוחב הקופסאות דינמי לפי רוחב המסך */
     max-width: 300px; /* הגבלה על רוחב הקישורים */
     margin-bottom: 2vh;
-    background-color: rgba(255, 255, 255, 0.1); /* אפור בהיר חצי שקוף */
+    background-color: rgba(255, 255, 255, 0.1); /* צבע רקע אפור חצי שקוף */
     border-radius: 10px;
     text-align: center;
     transition: transform 0.2s;
 }
 
-/* אפקט Slide-In עבור כל קישור עם עיכוב */
-.social-links li:nth-child(1) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1s; /* עיכוב של 1 שניות */
+/* עיצוב מיוחד לקופסה של Lucid בצבע אדום */
+.social-links li.lucid {
+    background-color: rgba(255, 0, 0, 0.7); /* רקע אדום חצי שקוף */
 }
 
-.social-links li:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.2s; /* עיכוב של 1.2 שניות */
-}
-
-.social-links li:nth-child(3) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.4s; /* עיכוב של 1.4 שניות */
-}
-
-.social-links li:nth-child(4) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.6s; /* עיכוב של 1.6 שניות */
-}
-
-.social-links li:nth-child(5) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.8s; /* עיכוב של 1.8 שניות */
-}
-
-.social-links li:nth-child(6) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 2s; /* עיכוב של 2 שניות */
-}
-
-/* אפקט Slide-In */
-@keyframes slideInLinks {
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* עיצוב כל קישור */
-.social-links a {
+/* עיצוב לקישורים */
+.social-links li a {
     display: block;
     padding: 10px;
     color: #fff;
@@ -173,15 +101,14 @@ h1 {
     font-size: 4vw; /* גודל דינמי לקישורים */
     font-weight: bold;
     transition: color 0.2s;
-    position: relative;
 }
 
-/* אפקט Hover מגניב לקישורים */
-.social-links a:hover {
+/* אפקט Hover לקישורים */
+.social-links li a:hover {
     color: #ff6347;
 }
 
-.social-links a::after {
+.social-links li a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -194,7 +121,7 @@ h1 {
     transform-origin: right;
 }
 
-.social-links a:hover::after {
+.social-links li a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -221,8 +148,6 @@ h1 {
     transform: translateX(-50%); /* העברת האובייקט למרכז */
     text-align: center;
     font-style: italic;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards 1.5s; /* אפקט Fade-In */
 }
 
 /* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
