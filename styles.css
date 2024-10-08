@@ -4,15 +4,18 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
+    background-color: black; /* צבע שחור כשכבה תחתונה כדי למנוע לבן ברקע */
+    overflow-x: hidden; /* מניעת גלילה אופקית */
 }
 
 /* עיצוב רקע הדף עם תמונת רקע בפורמט JPG */
 .background-image {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* שכבת כיסוי שקופה */
@@ -30,12 +33,13 @@ body, html {
     color: white;
     text-align: center;
     padding: 20px;
+    min-height: 100vh;
 }
 
 /* עיצוב לתמונת הפרופיל */
 .profile-image {
-    width: 120px; /* גודל התמונה רספונסיבי */
-    height: 120px; /* גובה התמונה רספונסיבי */
+    width: 100px; /* גודל התמונה קטן יותר ב-iPhone SE */
+    height: 100px;
     border-radius: 50%; /* הופך את התמונה לעיגול */
     object-fit: cover; /* מתאים את התמונה לגבולות */
     margin-bottom: 10px; /* הקטנת המרווח בין התמונה לכותרת */
@@ -44,7 +48,7 @@ body, html {
 
 /* עיצוב הכותרת הראשית Welcome */
 h1 {
-    font-size: 30px; /* הקטנת גודל הכותרת */
+    font-size: 28px; /* הקטנת גודל הכותרת */
     margin-bottom: 10px; /* מרווח קטן מתחת לכותרת */
     color: #ff6347; /* צבע כתום-אדום לכותרת */
 }
@@ -53,7 +57,7 @@ h1 {
 .intro-text {
     font-size: 14px; /* גודל טקסט קטן יותר */
     color: #ffffff; /* צבע לבן */
-    margin-bottom: 20px; /* מרווח קטן יותר מתחת לטקסט */
+    margin-bottom: 15px; /* מרווח קטן יותר מתחת לטקסט */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -69,9 +73,9 @@ h1 {
 
 /* עיצוב כל קישור בתוך קופסה בצבע אפור בהיר חצי שקוף */
 .social-links li {
-    width: 80%;
-    max-width: 300px; /* הגבלה על רוחב הקישורים */
-    margin-bottom: 15px;
+    width: 90%;
+    max-width: 250px; /* הגבלה על רוחב הקישורים */
+    margin-bottom: 10px;
     background-color: rgba(255, 255, 255, 0.1); /* אפור בהיר חצי שקוף */
     border-radius: 10px;
     text-align: center;
@@ -86,7 +90,7 @@ h1 {
 /* עיצוב כל קישור */
 .social-links a {
     display: block;
-    padding: 15px;
+    padding: 12px;
     color: #fff;
     text-decoration: none;
     font-size: 16px; /* גודל הקישורים */
@@ -99,14 +103,16 @@ h1 {
     color: #ff6347; /* צבע כתום-אדום בריחוף */
 }
 
-/* עיצוב קישור האימייל בצבע כתום-אדום */
+/* עיצוב קישור האימייל בצבע כתום-אדום, בלי קו תחתון */
 .email-link {
     color: #ff6347;
     font-weight: bold;
+    text-decoration: none; /* הסרת קו תחתון */
 }
 
 .email-link:hover {
-    text-decoration: underline;
+    color: #ff6347; /* השארת צבע אך ללא קו תחתון */
+    text-decoration: none; /* מניעת הופעת קו תחתון */
 }
 
 /* עיצוב שם בתחתית העמוד */
@@ -121,7 +127,7 @@ h1 {
     font-style: italic;
 }
 
-/* עיצוב רספונסיבי עבור מכשירים קטנים */
+/* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
 @media (min-width: 768px) {
     .profile-image {
         width: 150px; /* גודל התמונה גדול יותר במכשירים גדולים */
