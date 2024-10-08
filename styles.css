@@ -3,15 +3,17 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     font-family: Arial, sans-serif;
     background-color: black; /* צבע שחור כשכבה תחתונה כדי למנוע לבן ברקע */
-    overflow-x: hidden; /* מניעת גלילה אופקית */
+    overflow: hidden; /* מניעת גלילה */
 }
 
 /* עיצוב רקע הדף עם תמונת רקע בפורמט JPG */
 .background-image {
     position: relative;
-    min-height: 100vh;
+    height: 100vh; /* הגדרת גובה לפי המסך */
+    width: 100vw;  /* רוחב מלא */
     background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
     background-size: cover;
     background-position: center;
@@ -30,34 +32,34 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white;
     text-align: center;
-    padding: 20px;
-    min-height: 100vh;
+    padding: 10px;
 }
 
 /* עיצוב לתמונת הפרופיל */
 .profile-image {
-    width: 100px; /* גודל התמונה קטן יותר ב-iPhone SE */
-    height: 100px;
+    width: 15vw; /* גודל דינמי לפי רוחב המסך */
+    height: 15vw; /* גודל דינמי לפי רוחב המסך */
+    max-width: 120px; /* גודל מקסימלי */
+    max-height: 120px; /* גובה מקסימלי */
     border-radius: 50%; /* הופך את התמונה לעיגול */
     object-fit: cover; /* מתאים את התמונה לגבולות */
-    margin-bottom: 10px; /* הקטנת המרווח בין התמונה לכותרת */
-    border: 3px solid #fff; /* מסגרת לבנה סביב התמונה */
+    margin-bottom: 5vh; /* מרווח דינמי מתחת לתמונה */
+    border: 2px solid #fff; /* מסגרת לבנה סביב התמונה */
 }
 
 /* עיצוב הכותרת הראשית Welcome */
 h1 {
-    font-size: 28px; /* הקטנת גודל הכותרת */
-    margin-bottom: 10px; /* מרווח קטן מתחת לכותרת */
+    font-size: 4vw; /* גודל כותרת דינמי לפי רוחב המסך */
+    margin-bottom: 3vh; /* מרווח דינמי מתחת לכותרת */
     color: #ff6347; /* צבע כתום-אדום לכותרת */
 }
 
 /* עיצוב הטקסט המזמין מתחת לכותרת */
 .intro-text {
-    font-size: 14px; /* גודל טקסט קטן יותר */
+    font-size: 2.5vw; /* גודל טקסט דינמי לפי רוחב המסך */
     color: #ffffff; /* צבע לבן */
-    margin-bottom: 15px; /* מרווח קטן יותר מתחת לטקסט */
+    margin-bottom: 4vh; /* מרווח דינמי */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -73,9 +75,9 @@ h1 {
 
 /* עיצוב כל קישור בתוך קופסה בצבע אפור בהיר חצי שקוף */
 .social-links li {
-    width: 90%;
-    max-width: 250px; /* הגבלה על רוחב הקישורים */
-    margin-bottom: 10px;
+    width: 80vw; /* רוחב הקופסאות דינמי לפי רוחב המסך */
+    max-width: 300px; /* הגבלה על רוחב הקישורים */
+    margin-bottom: 2vh;
     background-color: rgba(255, 255, 255, 0.1); /* אפור בהיר חצי שקוף */
     border-radius: 10px;
     text-align: center;
@@ -90,10 +92,10 @@ h1 {
 /* עיצוב כל קישור */
 .social-links a {
     display: block;
-    padding: 12px;
+    padding: 10px;
     color: #fff;
     text-decoration: none;
-    font-size: 16px; /* גודל הקישורים */
+    font-size: 3vw; /* גודל דינמי לקישורים */
     font-weight: bold;
     transition: color 0.2s;
 }
@@ -117,10 +119,10 @@ h1 {
 
 /* עיצוב שם בתחתית העמוד */
 .footer-text {
-    font-size: 16px;
+    font-size: 2.5vw; /* גודל דינמי לפי רוחב המסך */
     color: white; /* צבע לבן */
     position: absolute;
-    bottom: 20px; /* מרחק מהתחתית */
+    bottom: 2vh; /* מרחק מהתחתית */
     left: 50%; /* מיקום באמצע לרוחב העמוד */
     transform: translateX(-50%); /* העברת האובייקט למרכז */
     text-align: center;
@@ -130,8 +132,8 @@ h1 {
 /* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
 @media (min-width: 768px) {
     .profile-image {
-        width: 150px; /* גודל התמונה גדול יותר במכשירים גדולים */
-        height: 150px;
+        width: 120px; /* גודל התמונה גדול יותר במכשירים גדולים */
+        height: 120px;
     }
 
     h1 {
