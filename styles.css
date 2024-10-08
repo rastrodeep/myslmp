@@ -34,32 +34,33 @@ body, html {
     flex-direction: column;
     text-align: center;
     padding: 10px;
+    min-height: 100vh; /* גובה מינימלי למסך מלא */
 }
 
 /* עיצוב לתמונת הפרופיל */
 .profile-image {
-    width: 15vw; /* גודל דינמי לפי רוחב המסך */
-    height: 15vw; /* גודל דינמי לפי רוחב המסך */
-    max-width: 120px; /* גודל מקסימלי */
-    max-height: 120px; /* גובה מקסימלי */
+    width: 20vw; /* גודל דינמי לפי רוחב המסך */
+    height: 20vw; /* גודל דינמי לפי רוחב המסך */
+    max-width: 150px; /* גודל מקסימלי */
+    max-height: 150px; /* גובה מקסימלי */
     border-radius: 50%; /* הופך את התמונה לעיגול */
     object-fit: cover; /* מתאים את התמונה לגבולות */
-    margin-bottom: 5vh; /* מרווח דינמי מתחת לתמונה */
+    margin-bottom: 2vh; /* הקטנת המרווח בין התמונה לכותרת */
     border: 2px solid #fff; /* מסגרת לבנה סביב התמונה */
 }
 
 /* עיצוב הכותרת הראשית Welcome */
 h1 {
-    font-size: 4vw; /* גודל כותרת דינמי לפי רוחב המסך */
-    margin-bottom: 3vh; /* מרווח דינמי מתחת לכותרת */
+    font-size: 6vw; /* גודל כותרת דינמי לפי רוחב המסך */
+    margin-bottom: 2vh; /* מרווח דינמי קטן יותר מתחת לכותרת */
     color: #ff6347; /* צבע כתום-אדום לכותרת */
 }
 
 /* עיצוב הטקסט המזמין מתחת לכותרת */
 .intro-text {
-    font-size: 2.5vw; /* גודל טקסט דינמי לפי רוחב המסך */
+    font-size: 3.5vw; /* גודל טקסט דינמי לפי רוחב המסך */
     color: #ffffff; /* צבע לבן */
-    margin-bottom: 4vh; /* מרווח דינמי */
+    margin-bottom: 3vh; /* מרווח דינמי */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -95,7 +96,7 @@ h1 {
     padding: 10px;
     color: #fff;
     text-decoration: none;
-    font-size: 3vw; /* גודל דינמי לקישורים */
+    font-size: 4vw; /* גודל דינמי לקישורים */
     font-weight: bold;
     transition: color 0.2s;
 }
@@ -119,7 +120,7 @@ h1 {
 
 /* עיצוב שם בתחתית העמוד */
 .footer-text {
-    font-size: 2.5vw; /* גודל דינמי לפי רוחב המסך */
+    font-size: 3vw; /* גודל דינמי לפי רוחב המסך */
     color: white; /* צבע לבן */
     position: absolute;
     bottom: 2vh; /* מרחק מהתחתית */
@@ -132,8 +133,8 @@ h1 {
 /* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
 @media (min-width: 768px) {
     .profile-image {
-        width: 120px; /* גודל התמונה גדול יותר במכשירים גדולים */
-        height: 120px;
+        width: 150px; /* גודל התמונה גדול יותר במכשירים גדולים */
+        height: 150px;
     }
 
     h1 {
@@ -141,7 +142,7 @@ h1 {
     }
 
     .intro-text {
-        font-size: 16px; /* הטקסט גדול יותר במכשירים גדולים */
+        font-size: 18px; /* הטקסט גדול יותר במכשירים גדולים */
     }
 
     .social-links a {
