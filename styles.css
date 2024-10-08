@@ -41,8 +41,8 @@ body, html {
 .profile-image {
     width: 20vw; /* גודל דינמי לפי רוחב המסך */
     height: 20vw; /* גודל דינמי לפי רוחב המסך */
-    max-width: 180px; /* גודל מקסימלי */
-    max-height: 180px; /* גובה מקסימלי */
+    max-width: 200px; /* גודל מקסימלי */
+    max-height: 200px; /* גובה מקסימלי */
     border-radius: 50%; /* הופך את התמונה לעיגול */
     object-fit: cover; /* מתאים את התמונה לגבולות */
     margin-bottom: 2vh; /* הקטנת המרווח בין התמונה לכותרת */
