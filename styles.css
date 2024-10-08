@@ -145,4 +145,91 @@ h1 {
 @keyframes slideInLinks {
     to {
         transform: translateX(0);
-        opacity: 
+        opacity: 1;
+    }
+}
+
+/* עיצוב כל קישור */
+.social-links a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 4vw; /* גודל דינמי לקישורים */
+    font-weight: bold;
+    transition: color 0.2s;
+    position: relative;
+}
+
+/* אפקט Hover מגניב לקישורים */
+.social-links a:hover {
+    color: #ff6347;
+}
+
+.social-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff6347;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+.social-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* עיצוב קישור האימייל בצבע כתום-אדום, בלי קו תחתון */
+.email-link {
+    color: #ff6347;
+    font-weight: bold;
+    text-decoration: none; /* הסרת קו תחתון */
+}
+
+.email-link:hover {
+    color: #ff6347; /* השארת צבע אך ללא קו תחתון */
+    text-decoration: none; /* מניעת הופעת קו תחתון */
+}
+
+/* עיצוב שם בתחתית העמוד */
+.footer-text {
+    font-size: 3vw; /* גודל דינמי לפי רוחב המסך */
+    color: white; /* צבע לבן */
+    position: absolute;
+    bottom: 2vh; /* מרחק מהתחתית */
+    left: 50%; /* מיקום באמצע לרוחב העמוד */
+    transform: translateX(-50%); /* העברת האובייקט למרכז */
+    text-align: center;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards 1.5s; /* אפקט Fade-In */
+}
+
+/* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
+@media (min-width: 768px) {
+    .profile-image {
+        width: 180px; /* גודל התמונה גדול יותר במכשירים גדולים */
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 36px; /* הכותרת גדולה יותר במכשירים גדולים */
+    }
+
+    .intro-text {
+        font-size: 18px; /* הטקסט גדול יותר במכשירים גדולים */
+    }
+
+    .social-links a {
+        font-size: 18px; /* הקישורים גדולים יותר במכשירים גדולים */
+    }
+
+    .footer-text {
+        font-size: 18px; /* טקסט התחתית גדול יותר במכשירים גדולים */
+    }
+}
