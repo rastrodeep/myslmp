@@ -178,6 +178,11 @@ h1 {
     position: relative;
 }
 
+/* Social media icons styling */
+.social-links li a i {
+    margin-right: 10px; /* Add some spacing between icon and text */
+}
+
 /* Hover effect for links */
 .social-links li a:hover {
     color: #ff6347;
