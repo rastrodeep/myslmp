@@ -40,7 +40,7 @@ h1 {
 
 /* עיצוב הטקסט המזמין מתחת לכותרת */
 .intro-text {
-    font-size: 20px;
+    font-size: 16px; /* הקטנת הטקסט */
     color: #ffffff; /* צבע לבן */
     margin-bottom: 30px;
 }
@@ -55,11 +55,11 @@ h1 {
     align-items: center;
 }
 
-/* עיצוב כל קישור בתוך קופסה אפורה חצי שקופה */
+/* עיצוב כל קישור בתוך קופסה בצבע אפור בהיר חצי שקוף */
 .social-links li {
     width: 80%;
     margin-bottom: 15px;
-    background-color: rgba(0, 0, 0, 0.5); /* אפור חצי שקוף */
+    background-color: rgba(255, 255, 255, 0.1); /* אפור בהיר חצי שקוף */
     border-radius: 10px;
     text-align: center;
     transition: transform 0.2s;
@@ -76,7 +76,7 @@ h1 {
     padding: 15px;
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 18px; /* הקישורים נשארים גדולים יותר */
     font-weight: bold;
     transition: color 0.2s;
 }
