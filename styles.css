@@ -40,10 +40,25 @@ body, html {
     animation: fadeIn 1.5s ease-in forwards; /* אפקט Fade-In */
 }
 
-/* אפקט Fade-In */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
+/* אפקט bounce על הכותרת Welcome */
+h1 {
+    font-size: 6vw; /* גודל כותרת דינמי לפי רוחב המסך */
+    margin-bottom: 2vh;
+    color: #ff6347;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: bounce 2s infinite; /* אפקט bounce */
+}
+
+/* אנימציה של bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
     }
 }
 
@@ -65,25 +80,6 @@ body, html {
 @keyframes zoomIn {
     to {
         transform: scale(1);
-    }
-}
-
-/* עיצוב הכותרת הראשית Welcome */
-h1 {
-    font-size: 6vw; /* גודל כותרת דינמי לפי רוחב המסך */
-    margin-bottom: 2vh; /* מרווח דינמי קטן יותר מתחת לכותרת */
-    color: #ff6347; /* צבע כתום-אדום לכותרת */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* אפקט צל */
-    opacity: 0;
-    transform: translateY(-50px); /* אפקט Slide-In */
-    animation: slideIn 1s ease-out forwards 0.5s; /* עיכוב של 0.5 שניות */
-}
-
-/* אפקט Slide-In */
-@keyframes slideIn {
-    to {
-        transform: translateY(0);
-        opacity: 1;
     }
 }
 
@@ -119,6 +115,19 @@ h1 {
     transition: transform 0.2s;
 }
 
+/* עיצוב האייקונים ליד הקישורים */
+.social-links i {
+    margin-right: 10px; /* רווח בין האייקון לטקסט */
+    font-size: 1.5em; /* גודל האייקון */
+    vertical-align: middle; /* מיקום האייקון */
+    color: #fff; /* צבע לבן */
+}
+
+/* אפקט Hover לאייקונים */
+.social-links a:hover i {
+    color: #ff6347; /* שינוי צבע האייקון בריחוף */
+}
+
 /* אפקט Slide-In עבור כל קישור עם עיכוב */
 .social-links li:nth-child(1) {
     opacity: 0;
@@ -132,119 +141,8 @@ h1 {
     animation: slideInLinks 1s ease-out forwards 1.2s; /* עיכוב של 1.2 שניות */
 }
 
-.social-links li:nth-child(3) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.4s; /* עיכוב של 1.4 שניות */
-}
-
-.social-links li:nth-child(4) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.6s; /* עיכוב של 1.6 שניות */
-}
-
-.social-links li:nth-child(5) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 1.8s; /* עיכוב של 1.8 שניות */
-}
-
-.social-links li:nth-child(6) {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slideInLinks 1s ease-out forwards 2s; /* עיכוב של 2 שניות */
-}
-
 /* אפקט Slide-In */
 @keyframes slideInLinks {
     to {
         transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* עיצוב כל קישור */
-.social-links a {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 4vw; /* גודל דינמי לקישורים */
-    font-weight: bold;
-    transition: color 0.2s;
-    position: relative;
-}
-
-/* אפקט Hover מגניב לקישורים */
-.social-links a:hover {
-    color: #ff6347;
-}
-
-.social-links a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #ff6347;
-    left: 0;
-    bottom: -5px;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: right;
-}
-
-.social-links a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* עיצוב קישור האימייל בצבע כתום-אדום, בלי קו תחתון */
-.email-link {
-    color: #ff6347;
-    font-weight: bold;
-    text-decoration: none; /* הסרת קו תחתון */
-}
-
-.email-link:hover {
-    color: #ff6347; /* השארת צבע אך ללא קו תחתון */
-    text-decoration: none; /* מניעת הופעת קו תחתון */
-}
-
-/* עיצוב שם בתחתית העמוד */
-.footer-text {
-    font-size: 3vw; /* גודל דינמי לפי רוחב המסך */
-    color: white; /* צבע לבן */
-    position: absolute;
-    bottom: 2vh; /* מרחק מהתחתית */
-    left: 50%; /* מיקום באמצע לרוחב העמוד */
-    transform: translateX(-50%); /* העברת האובייקט למרכז */
-    text-align: center;
-    font-style: italic;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards 1.5s; /* אפקט Fade-In */
-}
-
-/* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
-@media (min-width: 768px) {
-    .profile-image {
-        width: 180px; /* גודל התמונה גדול יותר במכשירים גדולים */
-        height: 180px;
-    }
-
-    h1 {
-        font-size: 36px; /* הכותרת גדולה יותר במכשירים גדולים */
-    }
-
-    .intro-text {
-        font-size: 18px; /* הטקסט גדול יותר במכשירים גדולים */
-    }
-
-    .social-links a {
-        font-size: 18px; /* הקישורים גדולים יותר במכשירים גדולים */
-    }
-
-    .footer-text {
-        font-size: 18px; /* טקסט התחתית גדול יותר במכשירים גדולים */
-    }
-}
+        opacity: 
