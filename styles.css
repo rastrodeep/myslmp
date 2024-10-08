@@ -144,12 +144,8 @@ h1 {
     animation: slideInLinks 1s ease-out forwards 2s; /* Delay of 2s */
 }
 
-.social-links li:nth-child(5) {
-    animation: slideInLinks 1s ease-out forwards 2.2s; /* Delay of 2.2s */
-}
-
-.social-links li:nth-child(6) {
-    animation: slideInLinks 1s ease-out forwards 2.4s; /* Delay of 2.4s */
+social-links li:nth-child(5) {
+    animation: slideInLinks 1s ease-out forwards 2.2s; /* Delay */
 }
 
 /* Specific styling for Lucid link */
@@ -184,7 +180,7 @@ h1 {
 }
 
 /* Underline effect on hover */
-.social-links li a::after {
+social-links li a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -197,7 +193,7 @@ h1 {
     transform-origin: right;
 }
 
-.social-links li a:hover::after {
+social-links li a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -216,54 +212,54 @@ h1 {
     animation: fadeIn 1.5s ease-in forwards 2.8s; /* Delay of 2.8s */
 }
 
-/* Responsive design for larger screens (desktops) */
+/* Responsive design for larger screens (desktops), reducing element size */
 @media (min-width: 1024px) {
     .profile-image {
-        width: 15vw;
-        height: 15vw;
-        max-width: 300px;
-        max-height: 300px;
+        width: 7.5vw;
+        height: 7.5vw;
+        max-width: 150px;
+        max-height: 150px;
     }
 
     h1 {
-        font-size: 4vw;
+        font-size: 2vw;
     }
 
     .intro-text {
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 
     .social-links li a {
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 
     .footer-text {
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 }
 
-/* Additional responsive design for tablets */
+/* Responsive design for tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
     .profile-image {
-        width: 20vw;
-        height: 20vw;
-        max-width: 250px;
-        max-height: 250px;
+        width: 15vw;
+        height: 15vw;
+        max-width: 150px;
+        max-height: 150px;
     }
 
     h1 {
-        font-size: 5vw;
-    }
-
-    .intro-text {
-        font-size: 2.5vw;
-    }
-
-    .social-links li a {
         font-size: 3vw;
     }
 
+    .intro-text {
+        font-size: 2vw;
+    }
+
+    .social-links li a {
+        font-size: 2vw;
+    }
+
     .footer-text {
-        font-size: 2.5vw;
+        font-size: 2vw;
     }
 }
