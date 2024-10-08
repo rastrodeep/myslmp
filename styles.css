@@ -29,12 +29,13 @@ body, html {
     flex-direction: column;
     color: white;
     text-align: center;
+    padding: 20px;
 }
 
 /* עיצוב לתמונת הפרופיל */
 .profile-image {
-    width: 150px; /* גודל התמונה */
-    height: 150px; /* גובה התמונה */
+    width: 120px; /* גודל התמונה רספונסיבי */
+    height: 120px; /* גובה התמונה רספונסיבי */
     border-radius: 50%; /* הופך את התמונה לעיגול */
     object-fit: cover; /* מתאים את התמונה לגבולות */
     margin-bottom: 10px; /* הקטנת המרווח בין התמונה לכותרת */
@@ -43,14 +44,14 @@ body, html {
 
 /* עיצוב הכותרת הראשית Welcome */
 h1 {
-    font-size: 36px; /* הקטנת גודל הכותרת */
+    font-size: 30px; /* הקטנת גודל הכותרת */
     margin-bottom: 10px; /* מרווח קטן מתחת לכותרת */
     color: #ff6347; /* צבע כתום-אדום לכותרת */
 }
 
 /* עיצוב הטקסט המזמין מתחת לכותרת */
 .intro-text {
-    font-size: 16px; /* גודל טקסט קטן יותר */
+    font-size: 14px; /* גודל טקסט קטן יותר */
     color: #ffffff; /* צבע לבן */
     margin-bottom: 20px; /* מרווח קטן יותר מתחת לטקסט */
 }
@@ -63,11 +64,13 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 /* עיצוב כל קישור בתוך קופסה בצבע אפור בהיר חצי שקוף */
 .social-links li {
     width: 80%;
+    max-width: 300px; /* הגבלה על רוחב הקישורים */
     margin-bottom: 15px;
     background-color: rgba(255, 255, 255, 0.1); /* אפור בהיר חצי שקוף */
     border-radius: 10px;
@@ -86,7 +89,7 @@ h1 {
     padding: 15px;
     color: #fff;
     text-decoration: none;
-    font-size: 18px; /* גודל הקישורים */
+    font-size: 16px; /* גודל הקישורים */
     font-weight: bold;
     transition: color 0.2s;
 }
@@ -108,7 +111,7 @@ h1 {
 
 /* עיצוב שם בתחתית העמוד */
 .footer-text {
-    font-size: 18px;
+    font-size: 16px;
     color: white; /* צבע לבן */
     position: absolute;
     bottom: 20px; /* מרחק מהתחתית */
@@ -116,4 +119,28 @@ h1 {
     transform: translateX(-50%); /* העברת האובייקט למרכז */
     text-align: center;
     font-style: italic;
+}
+
+/* עיצוב רספונסיבי עבור מכשירים קטנים */
+@media (min-width: 768px) {
+    .profile-image {
+        width: 150px; /* גודל התמונה גדול יותר במכשירים גדולים */
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 36px; /* הכותרת גדולה יותר במכשירים גדולים */
+    }
+
+    .intro-text {
+        font-size: 16px; /* הטקסט גדול יותר במכשירים גדולים */
+    }
+
+    .social-links a {
+        font-size: 18px; /* הקישורים גדולים יותר במכשירים גדולים */
+    }
+
+    .footer-text {
+        font-size: 18px; /* טקסט התחתית גדול יותר במכשירים גדולים */
+    }
 }
