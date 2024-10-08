@@ -31,28 +31,28 @@ body, html {
     text-align: center;
 }
 
-/* עיצוב הכותרת הראשית Welcome */
-h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    color: #ff6347; /* צבע כתום-אדום לכותרת */
-}
-
 /* עיצוב לתמונת הפרופיל */
 .profile-image {
     width: 150px; /* גודל התמונה */
     height: 150px; /* גובה התמונה */
     border-radius: 50%; /* הופך את התמונה לעיגול */
     object-fit: cover; /* מתאים את התמונה לגבולות */
-    margin-bottom: 20px; /* מרחק מתחת לתמונה לכותרת */
+    margin-bottom: 10px; /* הקטנת המרווח בין התמונה לכותרת */
     border: 3px solid #fff; /* מסגרת לבנה סביב התמונה */
+}
+
+/* עיצוב הכותרת הראשית Welcome */
+h1 {
+    font-size: 36px; /* הקטנת גודל הכותרת */
+    margin-bottom: 10px; /* מרווח קטן מתחת לכותרת */
+    color: #ff6347; /* צבע כתום-אדום לכותרת */
 }
 
 /* עיצוב הטקסט המזמין מתחת לכותרת */
 .intro-text {
-    font-size: 16px; /* הקטנת הטקסט */
+    font-size: 16px; /* גודל טקסט קטן יותר */
     color: #ffffff; /* צבע לבן */
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* מרווח קטן יותר מתחת לטקסט */
 }
 
 /* עיצוב רשימת הקישורים */
@@ -86,7 +86,7 @@ h1 {
     padding: 15px;
     color: #fff;
     text-decoration: none;
-    font-size: 18px; /* הקישורים נשארים גדולים יותר */
+    font-size: 18px; /* גודל הקישורים */
     font-weight: bold;
     transition: color 0.2s;
 }
@@ -110,9 +110,10 @@ h1 {
 .footer-text {
     font-size: 18px;
     color: white; /* צבע לבן */
-    position: center;
-    bottom: 20px;
-    width: 100%;
+    position: absolute;
+    bottom: 20px; /* מרחק מהתחתית */
+    left: 50%; /* מיקום באמצע לרוחב העמוד */
+    transform: translateX(-50%); /* העברת האובייקט למרכז */
     text-align: center;
     font-style: italic;
 }
