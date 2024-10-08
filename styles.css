@@ -1,4 +1,51 @@
-/* עיצוב עבור רשימת הקישורים */
+/* עיצוב כללי של הדף */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* עיצוב רקע הדף עם תמונת רקע בפורמט JPG */
+.background-image {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* שכבת כיסוי שקופה */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* אפקט שקיפות */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+/* עיצוב הכותרת הראשית Welcome */
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ff6347; /* צבע כתום-אדום לכותרת */
+}
+
+/* עיצוב הטקסט המזמין מתחת לכותרת */
+.intro-text {
+    font-size: 20px;
+    color: #ffffff; /* צבע לבן */
+    margin-bottom: 30px;
+}
+
+/* עיצוב רשימת הקישורים */
 .social-links {
     list-style: none;
     padding: 0;
@@ -8,7 +55,7 @@
     align-items: center;
 }
 
-/* עיצוב עבור כל קישור כקופסה */
+/* עיצוב כל קישור בתוך קופסה אפורה חצי שקופה */
 .social-links li {
     width: 80%;
     margin-bottom: 15px;
@@ -18,10 +65,12 @@
     transition: transform 0.2s;
 }
 
+/* אפקט הקפצה בריחוף */
 .social-links li:hover {
     transform: scale(1.05); /* אפקט הקפצה בזמן ריחוף */
 }
 
+/* עיצוב כל קישור */
 .social-links a {
     display: block;
     padding: 15px;
@@ -32,6 +81,28 @@
     transition: color 0.2s;
 }
 
+/* שינוי צבע הקישור בזמן ריחוף */
 .social-links a:hover {
-    color: #ff6347; /* שינוי צבע בזמן ריחוף */
+    color: #ff6347; /* צבע כתום-אדום בריחוף */
+}
+
+/* עיצוב קישור האימייל בצבע כתום-אדום */
+.email-link {
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+/* עיצוב שם בתחתית העמוד */
+.footer-text {
+    font-size: 18px;
+    color: white; /* צבע לבן */
+    position: center;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
 }
