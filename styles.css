@@ -5,23 +5,23 @@ body, html {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: black; /* צבע שחור כשכבה תחתונה כדי למנוע לבן ברקע */
     overflow: hidden; /* מניעת גלילה */
 }
 
 /* עיצוב רקע הדף */
 .background-image {
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: 100vh; /* הגדרת גובה מלא של הדף */
+    width: 100vw;  /* רוחב מלא של הדף */
     background-image: url('https://raw.githubusercontent.com/rastrodeep/myslmp/refs/heads/main/background1.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* אפקט Parallax */
     background-repeat: no-repeat;
 }
 
-/* עיצוב הקישורים */
+/* עיצוב רשימת הקישורים */
 .social-links {
     list-style: none;
     padding: 0;
@@ -34,11 +34,11 @@ body, html {
 
 /* עיצוב כללי לקישורים */
 .social-links li {
-    width: 80vw;
-    max-width: 300px;
+    width: 80vw; /* רוחב קופסה דינמי */
+    max-width: 300px; /* רוחב מקסימלי */
     margin-bottom: 2vh;
-    background-color: rgba(255, 255, 255, 0.1); /* רקע שקוף */
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* רקע אפור שקוף */
+    border-radius: 10px; /* פינות מעוגלות */
     text-align: center;
     transition: transform 0.2s;
     opacity: 0;
@@ -73,7 +73,7 @@ body, html {
 /* אפקט Slide-In עבור Lucid */
 .social-links li.lucid {
     animation: slideInLinks 1s ease-out forwards 1.7s; /* עיכוב של 1.7 שניות */
-    background-color: rgba(179, 63, 98, 0.7); /* רקע בצבע אדום חושני */
+    background-color: rgba(179, 63, 98, 0.7); /* צבע רקע אדום חושני */
 }
 
 /* אנימציה Slide-In */
@@ -88,19 +88,20 @@ body, html {
 .social-links li a {
     display: block;
     padding: 10px;
-    color: #fff;
+    color: #fff; /* צבע לבן */
     text-decoration: none;
-    font-size: 4vw;
+    font-size: 4vw; /* גודל דינמי של טקסט */
     font-weight: bold;
-    transition: color 0.2s;
+    transition: color 0.2s; /* אפקט מעבר על צבע הקישור */
     position: relative;
 }
 
 /* אפקט Hover לקישורים */
 .social-links li a:hover {
-    color: #ff6347;
+    color: #ff6347; /* שינוי צבע בעת ריחוף */
 }
 
+/* אפקט קו תחתון דינמי בעת ריחוף */
 .social-links li a::after {
     content: '';
     position: absolute;
@@ -119,7 +120,7 @@ body, html {
     transform-origin: left;
 }
 
-/* עיצוב קישור האימייל */
+/* עיצוב קישור האימייל בצבע כתום-אדום, בלי קו תחתון */
 .email-link {
     color: #ff6347;
     font-weight: bold;
@@ -127,6 +128,44 @@ body, html {
 }
 
 .email-link:hover {
-    color: #ff6347;
-    text-decoration: none;
+    color: #ff6347; /* שינוי צבע בעת ריחוף */
+    text-decoration: none; /* מניעת הופעת קו תחתון */
+}
+
+/* עיצוב שם בתחתית העמוד */
+.footer-text {
+    font-size: 3vw; /* גודל דינמי לפי רוחב המסך */
+    color: white; /* צבע לבן */
+    position: absolute;
+    bottom: 2vh; /* מרחק מהתחתית */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards 1.5s;
+}
+
+/* עיצוב רספונסיבי עבור מכשירים גדולים יותר */
+@media (min-width: 768px) {
+    .profile-image {
+        width: 180px; /* גודל התמונה גדול יותר במכשירים גדולים */
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 36px; /* הכותרת גדולה יותר במכשירים גדולים */
+    }
+
+    .intro-text {
+        font-size: 18px; /* הטקסט גדול יותר במכשירים גדולים */
+    }
+
+    .social-links a {
+        font-size: 18px; /* הקישורים גדולים יותר במכשירים גדולים */
+    }
+
+    .footer-text {
+        font-size: 18px; /* טקסט התחתית גדול יותר במכשירים גדולים */
+    }
 }
