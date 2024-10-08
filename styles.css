@@ -144,6 +144,18 @@ h1 {
     animation: slideInLinks 1s ease-out forwards 1.6s; /* עיכוב של 1.6 שניות */
 }
 
+.social-links li:nth-child(5) {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 1.8s; /* עיכוב של 1.8 שניות */
+}
+
+.social-links li:nth-child(6) {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLinks 1s ease-out forwards 2s; /* עיכוב של 2 שניות */
+}
+
 /* אפקט Slide-In */
 @keyframes slideInLinks {
     to {
