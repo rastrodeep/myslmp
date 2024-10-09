@@ -207,7 +207,21 @@ h1 {
     transform-origin: left;
 }
 
-/* Footer text styling */
+/* עיצוב הקישור ב-Lior Brilon ללא זיהוי של קישור */
+.hidden-link {
+    color: white; /* צבע לבן */
+    text-decoration: none; /* ללא קו תחתון */
+    cursor: pointer; /* תוודא שהעכבר יישאר כרגיל */
+}
+
+.hidden-link:hover,
+.hidden-link:active,
+.hidden-link:focus {
+    color: white; /* שמור על צבע לבן גם בעת ריחוף או לחיצה */
+    text-decoration: none; /* ללא שינוי בעת ריחוף */
+}
+
+/* עיצוב קיים של footer */
 .footer-text {
     font-size: 3vw;
     color: white;
@@ -220,6 +234,7 @@ h1 {
     opacity: 0;
     animation: fadeIn 1.5s ease-in forwards 2.8s; /* Delay of 2.8s */
 }
+
 
 /* Responsive design for larger screens (desktops) with scaling down */
 @media (min-width: 1024px) {
