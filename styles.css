@@ -235,6 +235,7 @@ h1 {
 .whatsapp-link:focus {
     color: white; /* שמירה על צבע לבן בכל מצב */
     text-decoration: none; /* ללא קו תחתון */
+    text-align: center;
 }
 
 /* Responsive design for larger screens (desktops) with scaling down */
