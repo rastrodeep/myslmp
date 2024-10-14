@@ -148,14 +148,16 @@ h1 {
     animation: slideInLinks 1s ease-out forwards 2.2s; /* Delay of 2.2s */
 }
 
-.social-links li:nth-child(6) {
-    animation: slideInLinks 1s ease-out forwards 2.4s; /* Delay of 2.4s */
+/* Specific styling for MS Excel Studies */
+.social-links li:nth-child(5) {
+    background-color: #2a9d8f; /* צבע שמותאם לאתר MS Excel Studies */
+    color: #e9c46a; /* צבע טקסט מותאם */
 }
 
 /* Specific styling for Lucid link */
 .social-links li.lucid {
     background-color: rgba(179, 63, 98, 0.7); /* Stylish red color */
-    animation: slideInLinks 1s ease-out forwards 2.6s; /* Delay of 2.6s */
+    animation: slideInLinks 1s ease-out forwards 2.4s; /* Delay of 2.4s */
 }
 
 /* Slide-in effect keyframe */
@@ -178,9 +180,9 @@ h1 {
     position: relative;
 }
 
-/* Social media icons styling */
+/* Icon styling for social media links */
 .social-links li a i {
-    margin-right: 10px; /* Add some spacing between icon and text */
+    margin-right: 10px; /* מרווח בין האייקון לטקסט */
 }
 
 /* Hover effect for links */
@@ -207,21 +209,7 @@ h1 {
     transform-origin: left;
 }
 
-/* עיצוב הקישור ב-Lior Brilon ללא זיהוי של קישור */
-.hidden-link {
-    color: white; /* צבע לבן */
-    text-decoration: none; /* ללא קו תחתון */
-    cursor: pointer; /* תוודא שהעכבר יישאר כרגיל */
-}
-
-.hidden-link:hover,
-.hidden-link:active,
-.hidden-link:focus {
-    color: white; /* שמור על צבע לבן גם בעת ריחוף או לחיצה */
-    text-decoration: none; /* ללא שינוי בעת ריחוף */
-}
-
-/* עיצוב קיים של footer */
+/* Footer text styling */
 .footer-text {
     font-size: 3vw;
     color: white;
@@ -235,6 +223,19 @@ h1 {
     animation: fadeIn 1.5s ease-in forwards 2.8s; /* Delay of 2.8s */
 }
 
+/* WhatsApp link styling: hidden as a link (white, no underline) */
+.whatsapp-link {
+    color: white;
+    text-decoration: none; /* ללא קו תחתון */
+    cursor: pointer; /* שומר על מצביע עכבר רגיל */
+}
+
+.whatsapp-link:hover,
+.whatsapp-link:active,
+.whatsapp-link:focus {
+    color: white; /* שמירה על צבע לבן בכל מצב */
+    text-decoration: none; /* ללא קו תחתון */
+}
 
 /* Responsive design for larger screens (desktops) with scaling down */
 @media (min-width: 1024px) {
