@@ -286,6 +286,7 @@ h1 {
     }
 
     .footer-text {
+        text-align: center;
         font-size: 2.5vw;
     }
 }
